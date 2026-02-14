@@ -1,0 +1,79 @@
+.header{
+    display: none;
+}
+
+.pigry-content {
+    background-color: #ffd9d3;
+    position: relative;
+}
+
+.login-content {
+    width: 40vw;
+    padding: 40px 0px;
+    background-color: #fff;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-content__inner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-content__heading {
+    font-family: serif;
+    margin-bottom: 20px;
+}
+
+.login-content__logo {
+    color: #ef9df1;
+}
+
+.login-content__ttl {
+    font-weight: lighter;
+}
+
+.login__form {
+    width: 90%;
+    margin: 0px auto;
+}
+
+.login__form-label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.login__form-input {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+}
+
+.form-error {
+    color: #ff8080;
+}
+
+.login__form-button {
+    text-align: center;
+}
+
+.login__form-button--submit {
+    margin-top: 20px;
+    padding: 5px 10px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(90deg, #a5a7e2, #fcaad9);
+}
+
+.login__form-button--link {
+    display: block;
+    margin-top: 20px;
+    color: #85c2ff;
+}
