@@ -5,11 +5,10 @@ use App\Http\Controllers\WeightLogsController;
 use App\Http\Controllers\WeightTargetController;
 
 Route::middleware('auth')->group(function(){
-    Route::get('/register/step2',[WeightLogsController::class,'create']);
     Route::get('/weight_logs',[WeightLogsController::class,'index']);
     Route::post('/weight_logs/create',[WeightLogsController::class,'store']);
+    Route::get('/weight_logs/{weight_log_id}', [WeightLogsController::class, 'show']);
     Route::get('/wight_logs/goal_setting',[WeightTargetController::class,'edit']);
-    Route::get('/weight_logs/{:weightLogId}/update', [WeightLogsController::class, 'show']);
 });
 
 /*
@@ -23,6 +22,6 @@ Route::middleware('auth')->group(function(){
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });

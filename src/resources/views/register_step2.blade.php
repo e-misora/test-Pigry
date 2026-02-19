@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/register.css')}}">
+<link rel="stylesheet" href="{{asset('css/register_step2.css')}}">
 @endsection
 
 @section('content')
@@ -23,7 +23,7 @@
             @enderror
         </div>
         <label class="register__form-label" for="">目標の体重</label>
-        <input class="register__form-input" type="text" name="email" value="{{old('target_weight')}}" placeholder="目標の体重を入力">
+        <input class="register__form-input" type="text" name="target_weight" value="{{old('target_weight')}}" placeholder="目標の体重を入力">
         <div class="form-error">
             @error('target_weight')
             {{$message}}

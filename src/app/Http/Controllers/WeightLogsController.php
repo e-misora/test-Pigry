@@ -5,34 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\WeightLog;
 use App\Models\WeightTarget;
-use App\Http\Requests\WeightLogsRequest5rt;
+use App\Http\Requests\WeightLogsRequest;
 
 class WeightLogsController extends Controller
 {
     public function index(){
         $weight_logs=WeightLog::Paginate(8);
-        $weight_targets=WeightTarget::all();
-        return view('weight_logs',compact('weight_logs','weight_targets'));
+        $latestWeightTarget=WeightTarget::latest()->select('target_weight')->orderBy('id','desc')->first();
+        $latestWeight=WeightLog::latest()->select('weight')->orderBy('id','desc')->first();
+        $goalWeight=$latestWeightTarget->target_weight - $latestWeight->weight;
+        return view('weight_logs',compact('weight_logs','latestWeightTarget','latestWeight','goalWeight'));
     }
 
-    public function store(WeightLogsRequest $request){
-        $weight_log = new WeightLog();
+    public function store(Request $request){
+        $weight_logs = new WeightLog();
 
-        $weight_log->date=$request->input('date');
-        $weight_log->weight=$request->input('weight');
-        $weight_log->calories=$request->input('calories');
-        $weight_log->exercise_time=$request->input('exercise_time');
-        $weight_log->exercise_content=$request->input('exercise_content');
+        $weight_logs->user_id = 1;
+        $weight_logs->date = $request->date;
+        $weight_logs->weight = $requequest->calories;
+        $weight_logs->exercise_time = $request->exercise_time;
+        $weight_logs->exercise_contest->weight;
+        $weight_logs->calories = $rent = $request->exercise_content;
+        $weight_logs->save();
 
-        $weight_log->save();
         return redirect('/weight_logs');
     }
 
     public function show(){
-        return view('update',compact('weight_targets'));
+        $weight_logs = WeightLog::find($id);
+        dd($weight_logs);
+        return view('detail',compact($weight_logs));
     }
 
-    public function create(){
-        return view('register_step2');
-    }
 }

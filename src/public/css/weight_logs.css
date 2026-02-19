@@ -10,9 +10,18 @@
 .weight_logs-content__top{
     background-color: #fff;
     display: flex;
-    justify-content: space-around;
     border-radius: 5px;
     padding: 20px;
+}
+
+.weight_logs-content__top--inner{
+    width: calc(100%/3);
+}
+
+.weight_logs-content__data{
+    list-style: none;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .weight_logs__form{
@@ -30,8 +39,6 @@
 .search-form--items-date{
     padding: 5px 10px;
     color: #dfdfdf;
-    border-radius: 5px;
-    border: 1px solid #dfdfdf;
 }
 
 .search-form--items-submit{
@@ -80,9 +87,11 @@
     background-color: #ff8080;
 }
 
-input{
+input,
+textarea{
     margin-top: 10px;
     padding: 10px;
+    border-radius: 5px;
     border: 1px solid #dfdfdf;
 }
 
@@ -101,7 +110,6 @@ input{
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 40px;
 }
 
 .modal__form-button--back {
@@ -126,26 +134,44 @@ input{
 .weight_logs-table{
     width: 100%;
     margin-top: 20px;
+    padding-bottom: 20px;
+    border-collapse: collapse;
 }
 
 .weight_logs-table__header{
-    display: block;
+    width: 100%;
     border-bottom: 2px solid #fcaad9;
     padding-bottom: 10px;
     text-align: left;
 }
 
-.weight_logs-table__header--date{
+.weight_logs-table__data{
+    margin-bottom: 10px;
+}
+
+.weight_logs-table__header--date,
+.weight_logs-table__data--date{
     width: 15%;
     padding-left: 20px;
 }
 
-.weight_logs-table__header--weight{
+.weight_logs-table__header--weight,
+.weight_logs-table__form-detail{
     width: 6%;
 }
 
 .weight_logs-table__header--calories,
 .weight_logs-table__header--exercise-time{
     width: 10%;
+}
+
+.form-update--img{
+    width: 30%;
+    border: none;
+}
+
+.weight_logs-table__pagination{
+    text-align: center;
+    margin-top: 20px;
 }
 

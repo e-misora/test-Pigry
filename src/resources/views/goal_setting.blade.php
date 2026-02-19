@@ -12,7 +12,7 @@
     <form class="goal_setting__form" action="" method="post">
     @csrf
         <div class="goal_setting__form-item">
-            <input class="goal_setting__form-input" type="text" name="target_weight"><span>kg</span>
+            <input class="goal_setting__form-input" type="text" name="target_weight" value="{{$latestWeightTarget->target_weight}}"><span>kg</span>
         </div>
         <div class="goal_setting__form-button">
             <a class="goal_setting__form-button--back" href="/weight_logs">戻る</a>

@@ -5,9 +5,10 @@
         <div class="modal">
             <div class="modal__inner">
                 <div class="modal__logo">
-                    <h2>weight logsを追加</h2>
+                    <h2>Weight Logsを追加</h2>
                 </div>
                 <form action="/weight_logs/create" method="post">
+                @csrf
                     <div class="modal__form-group">
                         <label>日付</label><span class="modal__form-label--required">必須</span>
                         <input class="modal__form-input--date" type="date" name="date" value="{{old('date')}}">
@@ -46,7 +47,7 @@
                     </div>
                     <div class="modal__form-group">
                     <label class="modal__form-label">運動内容</label>
-                        <input class="modal__form-textarea" name="exercise_content" type="textarea" value="{{old('exercise_content')}}">
+                        <textarea class="modal__form-textarea" rows="3" name="exercise_content" value="{{old('exercise_content')}}"></textarea>
                     </div>
                     <div class="form-error">
                         @error('exercise_content')

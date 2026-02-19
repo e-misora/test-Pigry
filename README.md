@@ -43,13 +43,9 @@
   ```bash
   php artisan key:generate  
   ```
-- マイグレーション実行  
+- マイグレーション,シーディング実行  
   ```bash
-  php artisan migrate  
-  ```
-- シーディング実行  
-  ```bash
-  php artisan db:seed  
+  php artisan migrate:refresh --seed  
   ```
 
 ## 使用技術（実行環境）

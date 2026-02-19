@@ -18,4 +18,9 @@ class WeightLog extends Model
         'exercise_time',
         'exercise_content'
     ];
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
