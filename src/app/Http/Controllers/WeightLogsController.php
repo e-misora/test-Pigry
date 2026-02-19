@@ -22,7 +22,7 @@ class WeightLogsController extends Controller
 
         $weight_logs->user_id = 1;
         $weight_logs->date = $request->date;
-        $weight_logs->weight = $requequest->calories;
+        $weight_logs->weight = $request->calories;
         $weight_logs->exercise_time = $request->exercise_time;
         $weight_logs->exercise_contest->weight;
         $weight_logs->calories = $rent = $request->exercise_content;
@@ -31,9 +31,8 @@ class WeightLogsController extends Controller
         return redirect('/weight_logs');
     }
 
-    public function show(){
-        $weight_logs = WeightLog::find($id);
-        dd($weight_logs);
+    public function show(Request $request){
+        $weight_logs = WeightLog::find($request->id);
         return view('detail',compact($weight_logs));
     }
 
